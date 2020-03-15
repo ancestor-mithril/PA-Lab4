@@ -1,9 +1,6 @@
 Optional: {
 1. 
-Clasa care descrie problema HR este clasa Main.
-Motivul pentru care este clasa main este datorita algoritmului de rezolvare al problemei descrise in cerinta
-algoritmul folosit necesita o singura metoda, impreuna cu datele de intrare, deci am considerat ca 
-Main este o clasa suficienta pentru algoritmul folosit
+Clasa care descrie problema HR este clasa Main, prin metoda resolve()
 
 2. 
 Metoda care imprementeaza algoritmul cerut este
@@ -18,8 +15,7 @@ d)daca are loc liber, il adaugam
 e)daca nu are loc liber, verificam daca are prioritate in spital fata de alti residenti
 f)daca are prioritate, eliminam cel mai putin favorit rezident al spitalului, adaugandu-l din nou in stiva, si il inlocuim cu residentul curent
 g)daca nu are prioritate, continuam cautarea
--cazuri extreme: residentul nu are loc in nici un spital preferat: - nu este alocat nicaieri, 
-un om cu cancer nu se duce la un spital de boli infectioase.
+-cazuri extreme: residentul nu are loc in nici un spital preferat: - nu este alocat nicaieri (repartizarea se face strict dupa acordul pacientului)
 
 3.
 public void randomInstance()
@@ -29,6 +25,9 @@ este functia care face ceea ce se cere in cere in cerinta
 
 4.
 Folosim algoritmul Gale Shapley, care creaza un matching stabil => obtinem un matching stabil.
+Motivul pentru care se obtine o relatie stabila este pentru ca nu exista nici un pacient "x" care sa poata fi asignat la un spital
+"mai preferat", si nu exista la un spital "mai preferat" nici un pacient "mai putin preferat" ca pacientul "x", pentru ca daca ar fi fost
+ar fi fost eliminat in punctul (2.f)
 
 }
 Bonus{
