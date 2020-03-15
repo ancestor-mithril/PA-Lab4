@@ -1,0 +1,64 @@
+Optional: {
+1. 
+Clasa care descrie problema HR este clasa Main.
+Motivul pentru care este clasa main este datorita algoritmului de rezolvare al problemei descrise in cerinta
+algoritmul folosit necesita o singura metoda, impreuna cu datele de intrare, deci am considerat ca 
+Main este o clasa suficienta pentru algoritmul folosit
+
+2. 
+Metoda care imprementeaza algoritmul cerut este
+public void resolve()
+acest algoritm urmeaza ideea de implementare din spatele algoritmului  Gale Shapley, deci este si 
+rezolvare de Bonus.
+Mod de functionare:
+a)adaugam toti residentii intr-o stiva.
+b)pentru fiecare rezident din stiva, il scoatem din stiva si cautam in lista lui de preferinta spitale disponibile
+c)pentru fiecare spital disponibil, verificam daca residentul are loc liber in spital
+d)daca are loc liber, il adaugam 
+e)daca nu are loc liber, verificam daca are prioritate in spital fata de alti residenti
+f)daca are prioritate, eliminam cel mai putin favorit rezident al spitalului, adaugandu-l din nou in stiva, si il inlocuim cu residentul curent
+g)daca nu are prioritate, continuam cautarea
+-cazuri extreme: residentul nu are loc in nici un spital preferat: - nu este alocat nicaieri, 
+un om cu cancer nu se duce la un spital de boli infectioase.
+
+3.
+public void randomInstance()
+este functia care face ceea ce se cere in cere in cerinta 
+-este folosit linkul + slide-urile pentru adaugarea bibliotecii
+-in rest, ii la fel ca si compulsory-ul
+
+4.
+Folosim algoritmul Gale Shapley, care creaza un matching stabil => obtinem un matching stabil.
+
+}
+Bonus{
+1. 
+initializarea este asemanatoare cu cea de la Compulsory, si este realizata in functia
+public void bonus()
+2.
+Algoritmul a fost implementat la optional, dar pentru a lua in calcul si faptul ca preferintele nu sunt stricte, 
+varianta finala a algoritmului se afla in 
+public void resolveBonus()
+Singura diferenta fata de Optional.2 este ca la f, daca ultimul rezident are prioritate egala cu 
+rezidentul curent, nu este eliminat.
+3.
+    /**
+     * Ultimul punct de bonus la PA
+     * Consideram un digraf bipartit, cu bipartitiile S si T
+     * S = {spitale}, T={pacienti}
+     * Consideram un punct s si un punct t
+     * Fie E multimea tutorul muchiilor, ij \in E daca i \in S, j in T si j \in hosPrefMap.get(i)
+     * si ji \in E daca i \in S, j in T si i \in resPrefMap.get(j)
+     * si muchii si, pt \forall i \in S
+     * si muchii jt, \forall j \in T
+     * Consideram un flux pe Digraful de mai sus
+     * pe fiecare muchie si si jt avem capacitatea +infinit
+     * pe fiecare muchie ij avem capacitatea (numarul de preferinte ale lui i)-(pozitia de preferinta a lui j in i)
+     * pt ji ce ii mai sus dar invers
+     *
+     * => se poate rezolva problema prin aplicarea unui algoritm de flux maxim
+     * conform cursurilor de AG, atunci cand avem mai mult de o posibilitate de deplasare dintr-un nod in celalalt care au capacitati egale
+     * => se obtin 2 sau mai multe fluxuri diferite, insa cu aceeasi valoare
+     * => ce spune in cerinta
+     */
+}
