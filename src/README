@@ -34,12 +34,16 @@ Bonus{
 1. 
 initializarea este asemanatoare cu cea de la Compulsory, si este realizata in functia
 public void bonus()
+se utilizeaza
+    Map<Hospital, List<List<Resident>>>  hosPrefBigMap;
+    Map<Resident, List<List<Hospital>>>  resPrefBigMap;
+pentru a retine nivelurile de preferinta
 2.
 Algoritmul a fost implementat la optional, dar pentru a lua in calcul si faptul ca preferintele nu sunt stricte, 
 varianta finala a algoritmului se afla in 
 public void resolveBonus()
-Singura diferenta fata de Optional.2 este ca la f, daca ultimul rezident are prioritate egala cu 
-rezidentul curent, nu este eliminat.
+Se convertesc listele de liste intr-o singura lista, si apoi urmeaza pasii de la Optional.2
+Singura diferenta este la punctul f, daca ultimul rezident are prioritate egala cu rezidentul curent, nu este eliminat.
 3.
     /**
      * Ultimul punct de bonus la PA
